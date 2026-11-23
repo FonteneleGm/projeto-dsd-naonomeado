@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Misc ###
+/cliente-python-zeep/.venv
+__pycache__/

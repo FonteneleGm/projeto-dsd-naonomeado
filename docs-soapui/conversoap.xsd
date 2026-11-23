@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by XML-WS Runtime (https://github.com/eclipse-ee4j/metro-jax-ws). Runtime's version is XML-WS Runtime 4.0.2 git-revision#0264419.--><xs:schema version="1.0" targetNamespace="http://naonomeado.dsd.com/" xmlns:tns="http://naonomeado.dsd.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="celsiusFahrenheit" type="tns:celsiusFahrenheit"/>
+  <xs:element name="celsiusFahrenheitResponse" type="tns:celsiusFahrenheitResponse"/>
+  <xs:element name="fahrenheitCelsius" type="tns:fahrenheitCelsius"/>
+  <xs:element name="fahrenheitCelsiusResponse" type="tns:fahrenheitCelsiusResponse"/>
+  <xs:complexType name="celsiusFahrenheit">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="celsiusFahrenheitResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fahrenheitCelsius">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fahrenheitCelsiusResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
