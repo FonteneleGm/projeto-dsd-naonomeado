@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor Colaborativo - WebSocket</title>
+</head>
+<body>
+    <h2>Conversor de Temperatura em Tempo Real</h2>
+    <p id="status">Conectando...</p>
+
+    <input type="number" id="valor" placeholder="Temperatura" step="any">
+    <select id="escala">
+        <option value="C">Celsius (°C)</option>
+        <option value="F">Fahrenheit (°F)</option>
+    </select>
+    <button onclick="ws.send(document.getElementById('escala').value + ':' + document.getElementById('valor').value)">Converter</button>
+
+    <ul id="historico"></ul>
+
+    <script>
+        //const ws = new WebSocket("ws://" + window.location.host + "/ws");
+        const protocolo = window.location.protocol === "https:" ? "wss://" : "ws://";
+        const ws = new WebSocket(protocolo + window.location.host + "/ws");
+
+        ws.onopen = () => {
+            document.getElementById("status").innerText = "Conectado ao servidor!";
+        };
+
+        ws.onmessage = (evento) => {
+            const item = document.createElement("li");
+            item.innerText = evento.data;
+            document.getElementById("historico").prepend(item);
+        };
+
+        ws.onclose = () => {
+            document.getElementById("status").innerText = "Desconectado.";
+        };
+    </script>
+</body>
+</html>
