@@ -1,7 +1,7 @@
 from zeep import Client
 from zeep.exceptions import Fault
 
-wsdl_url = "http://localhost:8080/conversoap?wsdl"
+wsdl_url = "http://localhost:8088/conversoap?wsdl"
 client = Client(wsdl=wsdl_url)
 
 temp_c = 25.0
